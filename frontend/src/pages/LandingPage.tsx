@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { ArrowRight, Calendar, Search, User, MapPin } from "lucide-react";
@@ -36,11 +35,8 @@ const LandingPage = () => {
       {/* Hero Section */}
       <section className="container mx-auto px-4 pt-20 pb-16 md:pt-32 md:pb-24">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          <motion.div
+          <div
             className="flex-1 space-y-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
               Healthcare at Your <span className="text-blue-600">Fingertips</span>
@@ -49,10 +45,7 @@ const LandingPage = () => {
               Book appointments with specialists, manage your health journey, and connect with healthcare professionals - all in one place.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
+              <div>
                 <Button
                   size="lg"
                   className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto"
@@ -61,11 +54,8 @@ const LandingPage = () => {
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
+              </div>
+              <div>
                 <Button
                   size="lg"
                   variant="outline"
@@ -74,22 +64,19 @@ const LandingPage = () => {
                 >
                   Log In
                 </Button>
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
+          <div
             className="flex-1 flex justify-center"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
           >
             <img
               src={coverImage}
               alt="Doctor with Patient"
               className="rounded-xl shadow-lg w-full max-w-[500px] h-auto"
             />
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -107,10 +94,7 @@ const LandingPage = () => {
 
       {/* Features Section */}
       <section className="container mx-auto px-4 py-16 md:py-24">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+        <div
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -119,17 +103,11 @@ const LandingPage = () => {
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Our platform makes it easy to find doctors, book appointments, and manage your healthcare needs.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 * index }}
-              whileHover={{ y: -8, transition: { duration: 0.2 } }}
-            >
+            <div key={index}>
               <Card className="h-full border-none shadow-md hover:shadow-lg transition-shadow duration-300">
                 <CardContent className="p-6 flex flex-col items-center text-center">
                   <div className="p-3 bg-blue-50 rounded-full mb-4 text-blue-600">
@@ -139,29 +117,23 @@ const LandingPage = () => {
                   <p className="text-gray-600">{feature.description}</p>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
           ))}
         </div>
-      </section>
+      </section >
 
       {/* User Types Section */}
-      <section className="container mx-auto px-4 py-16 md:py-24 bg-white rounded-t-3xl">
+      < section className="container mx-auto px-4 py-16 md:py-24 bg-white rounded-t-3xl" >
         <div className="text-center mb-16">
-          <motion.h2
+          <h2
             className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
           >
             For Patients and Doctors
-          </motion.h2>
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+          <div
             className="bg-blue-50 p-8 rounded-xl"
           >
             <h3 className="text-2xl font-bold text-blue-700 mb-4">For Patients</h3>
@@ -184,24 +156,18 @@ const LandingPage = () => {
               </li>
             </ul>
             <div className="mt-6">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
+              <div>
                 <Button
                   className="bg-blue-600 hover:bg-blue-700 text-white"
                   onClick={() => navigate("/register?role=patient")}
                 >
                   Register as Patient
                 </Button>
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+          <div
             className="bg-gray-50 p-8 rounded-xl"
           >
             <h3 className="text-2xl font-bold text-gray-800 mb-4">For Doctors</h3>
@@ -224,10 +190,7 @@ const LandingPage = () => {
               </li>
             </ul>
             <div className="mt-6">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
+              <div>
                 <Button
                   variant="outline"
                   className="border-blue-600 text-blue-600 hover:bg-blue-50"
@@ -235,14 +198,14 @@ const LandingPage = () => {
                 >
                   Register as Doctor
                 </Button>
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
+          </div>
         </div>
-      </section>
+      </section >
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      < footer className="bg-gray-900 text-white py-12" >
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
@@ -265,7 +228,7 @@ const LandingPage = () => {
           </div>
         </div>
       </footer>
-    </div>
+    </div >
   );
 };
 
