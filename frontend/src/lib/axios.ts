@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useAuthStore } from '../store/auth';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: 'https://click-360-backed.onrender.com//api',
 });
 
 api.interceptors.request.use((config) => {
